@@ -1,0 +1,31 @@
+body {
+.hero {
+  
+  h1{text-align: center;}
+  height: 95vh;
+  background-image: url('https://afjv.com/2025/09/250908-fortnite-global-championship-2025.jpg');
+  background-size: cover;
+  background-position: center;
+  background-opacity: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
+  color: gold; 
+  text-shadow:
+    2px 2px 0 black,
+    -2px -2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black;}
+
+  
+  h1{text-align: center;}
+  h2{text-align: center;}
+  background-color: #12131a; 
+  color: white;
+
+.presentation {
+    justify-content: center;
+    align-items: center;}
+
+}
