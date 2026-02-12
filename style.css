@@ -18,34 +18,32 @@ body {
   justify-content: center;
   align-items: center;
 
-  font-size: 2rem;
+  font-size: 3rem;
   color: gold;
   text-shadow:
-    3px 3px 0 black,
-    -3px -3px 0 black,
-    3px -3px 0 black,
-    -3px 3px 0 black;
+    3px 3px 0 white,
+    -3px -3px 0 white,
+    3px -3px 0 white,
+    -3px 3px 0 white;
 
   position: relative;
 }
 
 
-.hero h1,
-.hero h2,
 h1,
 h2 {
   text-align: center;
   font-family: 'Bebas Neue', sans-serif; 
   color: gold;
   text-shadow:
-    2px 2px 0 black,
-    -2px -2px 0 black,
-    2px -2px 0 black,
-    -2px 2px 0 black;
+    2px 2px 0 white,
+    -2px -2px 0 white,
+    2px -2px 0 white,
+    -2px 2px 0 white;
 }
 
 
-#presentation {
+presentation {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,10 +55,4 @@ img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-
-.hero h1,
-.hero h2 {
-  position: relative;
 }
