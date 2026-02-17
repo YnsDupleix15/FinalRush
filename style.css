@@ -1,5 +1,5 @@
 body {
-  background-color: #12131a;
+  background: linear-gradient(120deg, #FF0080, #A100FF, #FF5E00);
   color: white;
   margin: 0;
 
@@ -44,18 +44,29 @@ h2 {
     2px -2px 0 white,
     -2px 2px 0 white;
 }
- 
 
-presentation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+#presentation {
+  width: 80%;
+  margin: 60px auto;
+  color: white;
+  line-height: 1.7;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
-
+#presentation ul,
+#presentation ol {
+  text-align: left;   /* remet les listes à gauche */
+  display: inline-block; 
+}
 img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 650px;
+  display: flex;
+}
+
+table {
+  text-align: center;
+  margin: auto ;
 }
