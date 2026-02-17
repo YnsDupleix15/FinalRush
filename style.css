@@ -8,7 +8,7 @@ body {
 }
 
 
-hero {
+.hero {
   height: 90vh;
   background-image: url('https://afjv.com/2025/09/250908-fortnite-global-championship-2025.jpg');
   background-size: cover;
@@ -18,7 +18,9 @@ hero {
   justify-content: center;
   align-items: center;
 
-  font-size: 5rem;
+  font-size: 4rem;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif; 
   color: gold;
   text-shadow:
     3px 3px 0 white,
@@ -30,8 +32,9 @@ hero {
 }
 
 
-h1,
+
 h2 {
+  font-size: 3rem;
   text-align: center;
   font-family: 'Bebas Neue', sans-serif; 
   color: gold;
