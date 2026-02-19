@@ -100,3 +100,42 @@ nav a:hover {
   color: gold;
   text-shadow: 0 0 8px gold;
 }
+
+
+#inscriptions{
+  width: 80%;
+  margin: 90px auto;
+  text-align: center;
+}
+
+#inscriptions h1 {
+  text-shadow:
+    2px 2px 0 white,
+    -2px -2px 0 white,
+    2px -2px 0 white,
+    -2px 2px 0 white;
+  font-size: 3rem;
+  color: gold;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+#conditions {
+  width: 75%;
+  margin: 70px auto;
+  text-align: left; 
+}
+
+#conditions h2 {
+  font-size: 3rem;
+  text-align: center;
+  color: gold;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+#conditions ul {
+  margin-left: 20px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+
