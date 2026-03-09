@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM – Final Rush 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #FF0080, #A100FF, #FF5E00);
+      background-size: 300% 300%;
+      animation: bgBouge 8s ease infinite;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+    }
+
+    @keyframes bgBouge {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes apparition {
+      from { opacity: 0; transform: translateY(-40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glissement {
+      from { opacity: 0; transform: translateX(-30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    nav {
+      background: black;
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav ul { list-style: none; margin: 0; padding: 0; }
+    nav li { display: inline; margin: 0 20px; }
+    nav a { color: white; text-decoration: none; font-weight: bold; font-size: 18px; }
+    nav a:hover { color: gold; text-shadow: 0 0 8px gold; }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      color: gold;
+      text-align: center;
+      margin: 40px 0 10px;
+      text-shadow: 2px 2px 6px black;
+      animation: apparition 0.8s ease;
+    }
+
+    #sous-titre {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    .carte {
+      background: rgba(0, 0, 0, 0.55);
+      border: 2px solid gold;
+      border-radius: 14px;
+      padding: 30px;
+      width: 75%;
+      margin: 20px auto;
+      animation: glissement 0.6s ease;
+    }
+
+    .carte h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: gold;
+      text-shadow: 1px 1px 5px black;
+      margin-bottom: 15px;
+    }
+
+    .btn-vf {
+      padding: 10px 28px;
+      margin-right: 10px;
+      border: 2px solid gold;
+      border-radius: 8px;
+      background: transparent;
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .btn-vf:hover { background: gold; color: black; }
+    .btn-actif { background: gold; color: black; }
+
+    select {
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid gold;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      font-size: 1rem;
+      min-width: 250px;
+    }
+    select option { background: #1a0033; }
+
+    .indication {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid gold;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      font-size: 1rem;
+      width: 280px;
+    }
+
+    .feedback {
+      margin-top: 12px;
+      font-weight: bold;
+      font-size: 1rem;
+      min-height: 20px;
+    }
+    .correct { color: #00ff88; }
+    .faux    { color: #ff4466; }
+
+    #btn-valider {
+      display: block;
+      margin: 30px auto;
+      padding: 14px 55px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #btn-valider:hover { opacity: 0.85; }
+
+    #score-final {
+      display: none;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+      border: 3px solid gold;
+      border-radius: 18px;
+      padding: 50px;
+      width: 70%;
+      margin: 40px auto 60px;
+      animation: apparition 0.7s ease;
+    }
+    #score-final h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: gold;
+      text-shadow: 1px 1px 5px black;
+    }
+    #le-score {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      color: gold;
+    }
+    #btn-rejouer {
+      margin-top: 25px;
+      padding: 12px 45px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      background: transparent;
+      border: 2px solid gold;
+      color: gold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #btn-rejouer:hover { background: gold; color: black; }
+
+    footer {
+      background: black;
+      color: gold;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="inscriptions.html">Inscriptions</a></li>
+    <li><a href="histoire.html">Notre histoire</a></li>
+    <li><a href="QCM_JavaScript.html">Quiz</a></li>
+  </ul>
+</nav>
+
+<h1>⚡ QUIZ FINAL RUSH ⚡</h1>
+<p id="sous-titre">Teste tes connaissances sur le tournoi !</p>
+
+<div class="carte">
+  <h2>Question 1 – Le cashprize du 1er du tournoi est de 5 000 € ?</h2>
+  <button class="btn-vf" id="q1-vrai" onclick="repQ1 = 'vrai'; surlignerBouton('q1-vrai', 'q1-faux')">✅ VRAI</button>
+  <button class="btn-vf" id="q1-faux" onclick="repQ1 = 'faux'; surlignerBouton('q1-faux', 'q1-vrai')">❌ FAUX</button>
+  <div class="feedback" id="fb1"></div>
+</div>
+
+<div class="carte">
+  <h2>Question 2 – Sur quel jeu vidéo se déroule Final Rush ?</h2>
+  <select id="q2">
+    <option value="">-- Choisissez une réponse --</option>
+    <option value="a">League of Legends</option>
+    <option value="b">Fortnite</option>
+    <option value="c">Valorant</option>
+    <option value="d">Call of Duty</option>
+  </select>
+  <div class="feedback" id="fb2"></div>
+</div>
+
+<div class="carte">
+  <h2>Question 3 – En quelle année Final Rush a-t-il été créé ?</h2>
+  <p class="indication">⚠️ Format : un nombre à 4 chiffres (ex : 2020), sans espace</p>
+  <input type="text" id="q3" placeholder="Votre réponse..." maxlength="4">
+  <div class="feedback" id="fb3"></div>
+</div>
+
+<div class="carte">
+  <h2>Question 4 – Le tournoi Final Rush dure 3 jours ?</h2>
+  <button class="btn-vf" id="q4-vrai" onclick="repQ4 = 'vrai'; surlignerBouton('q4-vrai', 'q4-faux')">✅ VRAI</button>
+  <button class="btn-vf" id="q4-faux" onclick="repQ4 = 'faux'; surlignerBouton('q4-faux', 'q4-vrai')">❌ FAUX</button>
+  <div class="feedback" id="fb4"></div>
+</div>
+
+<div class="carte">
+  <h2>Question 5 – Combien de joueurs minimum pour former une équipe ?</h2>
+  <select id="q5">
+    <option value="">-- Choisissez une réponse --</option>
+    <option value="a">1 joueur</option>
+    <option value="b">2 joueurs</option>
+    <option value="c">3 joueurs</option>
+    <option value="d">5 joueurs</option>
+  </select>
+  <div class="feedback" id="fb5"></div>
+</div>
+
+<button id="btn-valider" onclick="valider()">🏆 VALIDER</button>
+
+<div id="score-final">
+  <h2>🏆 TON SCORE FINAL</h2>
+  <div id="le-score"></div>
+  <p id="le-message"></p>
+  <button id="btn-rejouer" onclick="rejouer()">🔄 REJOUER</button>
+</div>
+
+<footer>
+  <p>Final Rush 2026 – Tous droits réservés</p>
+</footer>
+
+<script>
+  function surlignerBouton(idActif, idInactif) {
+    document.getElementById(idActif).classList.add("btn-actif");
+    document.getElementById(idInactif).classList.remove("btn-actif");
+  }
+
+  var repQ1 = "";
+  var repQ4 = "";
+
+  function valider() {
+    var score = 0;
+    var ok = true;
+
+    if (repQ1 === "") {
+      document.getElementById("fb1").textContent = "⚠️ Veuillez répondre.";
+      document.getElementById("fb1").className = "feedback faux";
+      ok = false;
+    } else if (repQ1 === "vrai") {
+      document.getElementById("fb1").textContent = "✅ Bonne réponse !";
+      document.getElementById("fb1").className = "feedback correct";
+      score++;
+    } else {
+      document.getElementById("fb1").textContent = "❌ Faux. Le 1er remporte bien 5 000 €.";
+      document.getElementById("fb1").className = "feedback faux";
+    }
+
+    var q2 = document.getElementById("q2").value;
+    if (q2 === "") {
+      document.getElementById("fb2").textContent = "⚠️ Veuillez choisir une réponse.";
+      document.getElementById("fb2").className = "feedback faux";
+      ok = false;
+    } else if (q2 === "b") {
+      document.getElementById("fb2").textContent = "✅ Bonne réponse ! C'est Fortnite.";
+      document.getElementById("fb2").className = "feedback correct";
+      score++;
+    } else {
+      document.getElementById("fb2").textContent = "❌ Faux. La bonne réponse est Fortnite.";
+      document.getElementById("fb2").className = "feedback faux";
+    }
+
+    var q3 = document.getElementById("q3").value.trim();
+    if (q3 === "") {
+      document.getElementById("fb3").textContent = "⚠️ Veuillez entrer une réponse.";
+      document.getElementById("fb3").className = "feedback faux";
+      ok = false;
+    } else if (q3 === "2021") {
+      document.getElementById("fb3").textContent = "✅ Bonne réponse ! Final Rush est né en 2021.";
+      document.getElementById("fb3").className = "feedback correct";
+      score++;
+    } else {
+      document.getElementById("fb3").textContent = "❌ Faux. Final Rush a été créé en 2021.";
+      document.getElementById("fb3").className = "feedback faux";
+    }
+
+    if (repQ4 === "") {
+      document.getElementById("fb4").textContent = "⚠️ Veuillez répondre.";
+      document.getElementById("fb4").className = "feedback faux";
+      ok = false;
+    } else if (repQ4 === "faux") {
+      document.getElementById("fb4").textContent = "✅ Bonne réponse ! Le tournoi dure 2 jours.";
+      document.getElementById("fb4").className = "feedback correct";
+      score++;
+    } else {
+      document.getElementById("fb4").textContent = "❌ Faux. Le tournoi dure seulement 2 jours.";
+      document.getElementById("fb4").className = "feedback faux";
+    }
+
+    var q5 = document.getElementById("q5").value;
+    if (q5 === "") {
+      document.getElementById("fb5").textContent = "⚠️ Veuillez choisir une réponse.";
+      document.getElementById("fb5").className = "feedback faux";
+      ok = false;
+    } else if (q5 === "c") {
+      document.getElementById("fb5").textContent = "✅ Bonne réponse ! Les équipes sont de 3 joueurs.";
+      document.getElementById("fb5").className = "feedback correct";
+      score++;
+    } else {
+      document.getElementById("fb5").textContent = "❌ Faux. Il faut une équipe de 3 joueurs.";
+      document.getElementById("fb5").className = "feedback faux";
+    }
+
+    if (!ok) return;
+
+    document.getElementById("le-score").textContent = score + " / 5";
+
+    if (score === 5) {
+      document.getElementById("le-message").textContent = "🏆 Parfait ! Tu es prêt pour Final Rush !";
+      document.getElementById("le-score").style.color = "#00ff88";
+    } else if (score >= 3) {
+      document.getElementById("le-message").textContent = "💪 Pas mal ! Encore un effort !";
+      document.getElementById("le-score").style.color = "gold";
+    } else {
+      document.getElementById("le-message").textContent = "📖 Relis les pages du site, tu peux faire mieux !";
+      document.getElementById("le-score").style.color = "#ff4466";
+    }
+
+    document.getElementById("score-final").style.display = "block";
+    document.getElementById("btn-valider").style.display = "none";
+  }
+
+  function rejouer() {
+    repQ1 = "";
+    repQ4 = "";
+    document.getElementById("q1-vrai").classList.remove("btn-actif");
+    document.getElementById("q1-faux").classList.remove("btn-actif");
+    document.getElementById("q4-vrai").classList.remove("btn-actif");
+    document.getElementById("q4-faux").classList.remove("btn-actif");
+    document.getElementById("q2").value = "";
+    document.getElementById("q3").value = "";
+    document.getElementById("q5").value = "";
+
+    var feedbacks = document.querySelectorAll(".feedback");
+    for (var i = 0; i < feedbacks.length; i++) {
+      feedbacks[i].textContent = "";
+      feedbacks[i].className = "feedback";
+    }
+
+    document.getElementById("score-final").style.display = "none";
+    document.getElementById("btn-valider").style.display = "block";
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
